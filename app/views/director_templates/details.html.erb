@@ -1,0 +1,59 @@
+<h1>
+  Director #<%= @details.id %> details
+</h1>
+
+<a href="/directors">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="/delete_director/<%= @details.id %>">
+  Delete director
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @details.name %>
+  </dd>
+
+  <dt>
+    Dob
+  </dt>
+  <dd>
+    <%= @details.dob %>
+  </dd>
+
+  <dt>
+    Bio
+  </dt>
+  <dd>
+    <%= @details.bio %>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src="http://robohash.org/<%= @details.image %>">
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@details.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@details.updated_at) %> ago
+  </dd>
+</dl>
