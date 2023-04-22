@@ -1,0 +1,74 @@
+<h1>
+  Movie #<%= @details.id %> details
+</h1>
+
+<a href="/directors">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="/delete_movie/<%= @details.id %>">
+  Delete movie
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Title
+  </dt>
+  <dd>
+    <%= @details.title %>
+  </dd>
+
+  <dt>
+    Year
+  </dt>
+  <dd>
+    <%= @details.year %>
+  </dd>
+
+  <dt>
+    Duration
+  </dt>
+  <dd>
+    <%= @details.duration %>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%= @details.description %>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src="http://robohash.org/<%= @details.image %>?set=set3">
+  </dd>
+
+  <dt>
+    Director
+  </dt>
+  <dd>
+    <%= Director.where({ :id => @details.director_id }).first.name %>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@details.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@details.updated_at) %> ago
+  </dd>
+</dl>
+
+<hr>
